@@ -2,19 +2,20 @@
 #define COMMERCIAL__AIRPLANE__H
 #include "Airplane.h"
 
+/*
+ * @Author: Paul Kim
+ * Date Created: September 19, 2015
+ * Date Modified: September 20, 2015
+ */
 class CommercialAirplane : public Airplane {
 public:
    CommercialAirplane();
-   CommercialAirplane(std::string, std::string);
+   CommercialAirplane(std::string, std::string, int seats);
    ~CommercialAirplane();
-   //const CommercialAirplane* operator=(const CommercialAirplane*);
 
-   std::string getFAA() const;
-   std::string getModel() const;
-
+   bool Equals(const Airplane &other) const;
+   
    long totalCost();
    long fuelCost();
-protected:
-   //member variables
 };
 #endif
